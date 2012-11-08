@@ -1,0 +1,3 @@
+[
+  { "keys": ["controll+option+'"], "command": "ruby_toggle_string" }
+]
