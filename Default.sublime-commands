@@ -2,5 +2,9 @@
   {
     "caption": "RubyToggleString: ruby_toggle_string",
     "command": "ruby_toggle_string"
+  },
+  {
+    "caption": "RubyToggleString: ruby_toggle_string_and_symbol",
+    "command": "ruby_toggle_string_and_symbol"
   }
 ]
