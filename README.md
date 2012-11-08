@@ -1,9 +1,8 @@
 RubyToggleString
 ========
 
-Sublime Text 2 Plugin to toggle Ruby string literal (e.g. "foo" => 'foo' => %Q{foo}).
+Sublime Text 2 Plugin to toggle Ruby String literal (e.g. "foo" => 'foo' => %Q{foo}).
 
- 
 ## Installation
 
 ```
@@ -13,4 +12,5 @@ $ git clone https://github.com/jugyo/SublimeRubyToggleString.git RubyToggleStrin
 
 ## Usage
 
-`Ctrl + Shift + '`
+* `Ctrl + Shift + '`: Toggle String literal
+* `Ctrl + Shift + ;`: Toggle String and Symbol
