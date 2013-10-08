@@ -19,7 +19,8 @@ def find_string_around(text, regexp, position):
 
 class RubyToggleStringCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        org_sel = list(self.view.sel())
+        if int(sublime.version()) >= 3000:
+            org_sel = list(self.view.sel())
 
         for region in self.view.sel():
             expand_selection_around(self.view, region, r'(".*?"|\'.*?\'|%Q{.*?})')
@@ -47,12 +48,14 @@ class RubyToggleStringCommand(sublime_plugin.TextCommand):
                 return
             self.view.replace(edit, region, replace)
 
-        self.view.sel().clear()
-        self.view.sel().add_all(org_sel)
+        if int(sublime.version()) >= 3000:
+            self.view.sel().clear()
+            self.view.sel().add_all(org_sel)
 
 class RubyToggleStringAndSymbolCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        org_sel = list(self.view.sel())
+        if int(sublime.version()) >= 3000:
+            org_sel = list(self.view.sel())
 
         for region in self.view.sel():
             expand_selection_around(self.view, region, r'(".*?"|\'.*?\'|:\w+)')
@@ -74,5 +77,6 @@ class RubyToggleStringAndSymbolCommand(sublime_plugin.TextCommand):
                 return
             self.view.replace(edit, region, replace)
 
-        self.view.sel().clear()
-        self.view.sel().add_all(org_sel)
+        if int(sublime.version()) >= 3000:
+            self.view.sel().clear()
+            self.view.sel().add_all(org_sel)
