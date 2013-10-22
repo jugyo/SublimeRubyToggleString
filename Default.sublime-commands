@@ -6,5 +6,9 @@
   {
     "caption": "RubyToggleString: ruby_toggle_string_and_symbol",
     "command": "ruby_toggle_string_and_symbol"
+  },
+  {
+    "caption": "RubyToggleString: ruby_toggle_hash_symbol",
+    "command": "ruby_toggle_hash_symbol"
   }
 ]

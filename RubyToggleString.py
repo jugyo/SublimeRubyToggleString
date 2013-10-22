@@ -80,3 +80,29 @@ class RubyToggleStringAndSymbolCommand(sublime_plugin.TextCommand):
         if int(sublime.version()) >= 3000:
             self.view.sel().clear()
             self.view.sel().add_all(org_sel)
+
+class RubyToggleHashSymbolCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        if int(sublime.version()) >= 3000:
+            org_sel = list(self.view.sel())
+
+        for region in self.view.sel():
+            expand_selection_around(self.view, region, r'(:\w+|\w+:)')
+
+        for region in self.view.sel():
+            if region.size() == 0:
+                continue
+            selected = self.view.substr(region)
+            if selected[0] == ":":
+                inner = selected[1:]
+                replace = inner + ':'
+            elif selected[-1] == ":":
+                inner = selected[0:-1]
+                replace = ':' + inner
+            else:
+                return
+            self.view.replace(edit, region, replace)
+
+        if int(sublime.version()) >= 3000:
+            self.view.sel().clear()
+            self.view.sel().add_all(org_sel)

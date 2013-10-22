@@ -1,4 +1,5 @@
 [
   { "keys": ["ctrl+shift+'"], "command": "ruby_toggle_string" },
-  { "keys": ["ctrl+shift+;"], "command": "ruby_toggle_string_and_symbol" }
+  { "keys": ["ctrl+shift+;"], "command": "ruby_toggle_string_and_symbol" },
+  { "keys": ["ctrl+shift+l"], "command": "ruby_toggle_hash_symbol" }
 ]
